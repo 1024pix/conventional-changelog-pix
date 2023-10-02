@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/1024pix/conventional-changelog-pix#readme",
   "devDependencies": {
+    "conventional-changelog-core": "^7.0.0",
+    "tmp": "^0.2.1",
+    "vite": "^4.4.9",
     "vitest": "^0.34.6"
   }
 }
