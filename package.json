@@ -1,0 +1,19 @@
+{
+  "name": "conventional-changelog-pix",
+  "version": "0.0.0",
+  "description": "conventional-changelog pix preset",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1024pix/conventional-changelog-pix.git"
+  },
+  "author": "1024pix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1024pix/conventional-changelog-pix/issues"
+  },
+  "homepage": "https://github.com/1024pix/conventional-changelog-pix#readme"
+}
