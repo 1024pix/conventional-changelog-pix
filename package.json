@@ -1,8 +1,9 @@
 {
   "name": "conventional-changelog-pix",
+  "type": "module",
   "version": "0.0.0",
   "description": "conventional-changelog pix preset",
-  "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "test": "vitest"
   },
