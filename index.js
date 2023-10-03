@@ -10,9 +10,6 @@ export default async function createPreset () {
   const conventionalChangelog = createConventionalChangelogOpts(parserOpts, writerOpts)
 
   return {
-    gitRawCommitsOpts: {
-      noMerges: null
-    },
     parserOpts,
     writerOpts,
     recommendedBumpOpts,

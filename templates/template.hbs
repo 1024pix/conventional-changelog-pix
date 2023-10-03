@@ -2,11 +2,11 @@
 
 {{#each commitGroups}}
 
-    {{#if title}}
-        ### {{title}}
+{{#if title}}
+    ### {{title}}
 
-    {{/if}}
-    {{#each commits}}
-        {{> commit root=@root}}
-    {{/each}}
+{{/if}}
+{{#each commits}}
+    {{> commit root=@root}}
+{{/each}}
 {{/each}}

@@ -22,20 +22,14 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
-      if (!commit.pr) {
-        return
-      }
-
       if (commit.tag === 'BUGFIX') {
-        commit.tag = 'Bug Fixes'
-      } else if (commit.tag === 'CLEANUP') {
-        commit.tag = 'Cleanup'
+        commit.tag = 'Correction'
       } else if (commit.tag === 'FEATURE') {
-        commit.tag = 'Features'
+        commit.tag = 'Amélioration'
       } else if (commit.tag === 'DOC') {
-        commit.tag = 'Documentation'
-      } else if (commit.tag === 'SECURITY') {
-        commit.tag = 'Security'
+        commit.tag = 'Autre'
+      } else if (commit.tag === 'BUMP') {
+        commit.tag = 'Montée de version'
       } else {
         return
       }
@@ -47,7 +41,20 @@ function getWriterOpts () {
       return commit
     },
     groupBy: 'tag',
-    commitGroupsSort: 'title',
-    commitsSort: ['tag', 'taggedAs', 'message']
+    commitGroupsSort: (a,b) => {
+      const order = ['Amélioration', 'Correction', 'Montée de version', 'Autre']
+      const indexOfA = order.indexOf(a.title);
+      const indexOfB = order.indexOf(b.title);
+
+      if (indexOfA === -1) {
+        return 1;
+      }
+      if (indexOfB === -1) {
+        return -1;
+      }
+
+      return indexOfA - indexOfB;
+    },
+    commitsSort: ['tag', 'scope']
   }
 }
