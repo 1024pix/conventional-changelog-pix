@@ -1,5 +1,5 @@
 {
-  "name": "conventional-changelog-pix",
+  "name": "@1024pix/conventional-changelog-pix",
   "type": "module",
   "version": "0.0.0",
   "description": "conventional-changelog pix preset",
