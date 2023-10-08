@@ -12,7 +12,7 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "rm -rf dist/templates && tsup --onSuccess 'mkdir -p dist/templates && cp -r src/templates/ dist/templates/'",
     "prepublish": "npm run build",
     "test": "vitest"
   },
