@@ -4,6 +4,7 @@ export function createParserOpts () {
     headerCorrespondence: [
       'tag',
       'scope',
-    ]
+    ],
+    mergeCorrespondence: ['pr'],
   }
 }
