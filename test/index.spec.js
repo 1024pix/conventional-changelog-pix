@@ -34,13 +34,13 @@ describe('conventional-changelog-ember', () => {
 
       expect(chunk).toContain(`### Amélioration
 
-    -  remove feature info and unflag tests`)
+-  remove feature info and unflag tests`)
       expect(chunk).toContain(`### Correction
 
-    -  Deprecate specifying \`.render\` to views/components.`)
+-  Deprecate specifying \`.render\` to views/components.`)
       expect(chunk).toContain(`### Montée de version
 
-    -  Mark \`Ember.Array\` methods as public`)
+-  Mark \`Ember.Array\` methods as public`)
 
       expect(chunk).toContain(`### Autre`)
 
