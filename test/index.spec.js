@@ -11,10 +11,10 @@ describe('conventional-changelog-ember', () => {
 
     testTools.gitInit()
     testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests'])
-    testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying `.render` to views/components.'])
+    testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.'])
     testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.'])
     testTools.gitDummyCommit(['[DOC] Make ArrayProxy public'])
-    testTools.gitDummyCommit(['[BUMP] Mark `Ember.Array` methods as public'])
+    testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public'])
     testTools.gitDummyCommit('Bad commit')
     testTools.gitDummyCommit('Merge pull request #2000000 from jayphelps/remove-ember-views-component-block-info')
   })
@@ -32,17 +32,21 @@ describe('conventional-changelog-ember', () => {
     )) {
       chunk = chunk.toString()
 
-      expect(chunk).toContain(`### Amélioration
+      expect(chunk).toContain(`### :rocket: Amélioration
 
--  remove feature info and unflag tests`)
-      expect(chunk).toContain(`### Correction
+-  remove feature info and unflag tests 
+### :bug: Correction
 
--  Deprecate specifying \`.render\` to views/components.`)
-      expect(chunk).toContain(`### Montée de version
+-  Deprecate specifying .render to views/components. 
+### :building_construction: Tech
 
--  Mark \`Ember.Array\` methods as public`)
+-  Ensure primitive value contexts are escaped. 
+### :arrow_up: Montée de version
 
-      expect(chunk).toContain(`### Autre`)
+-  Mark Ember.Array methods as public 
+### :coffee: Autre
+
+-  Make ArrayProxy public `)
 
       expect(chunk).not.toContain('CLEANUP')
       expect(chunk).not.toContain('FEATURE')

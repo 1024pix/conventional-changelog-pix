@@ -22,16 +22,18 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
-      if (commit.tag === 'BUGFIX') {
-        commit.tag = 'Correction'
+      if (commit.tag === 'BREAKING') {
+        commit.tag = ':boom: BREAKING CHANGE'
+      } else if (commit.tag === 'BUGFIX') {
+        commit.tag = ':bug: Correction'
       } else if (commit.tag === 'FEATURE') {
-        commit.tag = 'Amélioration'
-      } else if (commit.tag === 'DOC') {
-        commit.tag = 'Autre'
+        commit.tag = ':rocket: Amélioration'
       } else if (commit.tag === 'BUMP') {
-        commit.tag = 'Montée de version'
-      } else {
-        return
+        commit.tag = ':arrow_up: Montée de version'
+      } else if (commit.tag === 'TECH') {
+        commit.tag = ':building_construction: Tech'
+      } else if (commit.tag) {
+        commit.tag = ':coffee: Autre'
       }
 
       if (typeof commit.hash === 'string') {
@@ -42,7 +44,14 @@ function getWriterOpts () {
     },
     groupBy: 'tag',
     commitGroupsSort: (a,b) => {
-      const order = ['Amélioration', 'Correction', 'Montée de version', 'Autre']
+      const order = [
+        ':boom: BREAKING CHANGE',
+        ':rocket: Amélioration',
+        ':bug: Correction',
+        ':building_construction: Tech',
+        ':arrow_up: Montée de version',
+        ':coffee: Autre'
+      ]
       const indexOfA = order.indexOf(a.title);
       const indexOfB = order.indexOf(b.title);
 
