@@ -11,6 +11,9 @@
       "import": "./dist/index.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist/templates && tsup --onSuccess 'mkdir -p dist/templates && cp -r src/templates/ dist/templates/'",
     "prepublish": "npm run build",
