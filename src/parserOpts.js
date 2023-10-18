@@ -3,12 +3,11 @@ export function createParserOpts () {
     gitRawCommitsOpts: {
       merges: null
     },
-    headerPattern: /^\[(.*)] (.*)$/,
+    headerPattern: /^\[(.*)] (.*)$|#(\d+)/,
     headerCorrespondence: [
       'tag',
       'scope',
+      'pr'
     ],
-    mergePattern: /(#.*)/,
-    mergeCorrespondence: ['pr'],
   }
 }
