@@ -35,20 +35,20 @@ describe('conventional-changelog-ember', () => {
       expect(chunk).toContain(`
 ### :rocket: Amélioration
 
--  remove feature info and unflag tests
+- remove feature info and unflag tests
 ### :bug: Correction
 
--  Deprecate specifying .render to views/components.
+- Deprecate specifying .render to views/components.
 ### :building_construction: Tech
 
--  Ensure primitive value contexts are escaped.
+- Ensure primitive value contexts are escaped.
 ### :arrow_up: Montée de version
 
--  Mark Ember.Array methods as public
+- Mark Ember.Array methods as public
 ### :coffee: Autre
 
--  Make ArrayProxy public
--  -  `)
+- Make ArrayProxy public
+`)
 
       expect(chunk).not.toContain('CLEANUP')
       expect(chunk).not.toContain('FEATURE')
