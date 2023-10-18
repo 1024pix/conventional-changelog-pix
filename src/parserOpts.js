@@ -1,7 +1,7 @@
 export function createParserOpts () {
   return {
     gitRawCommitsOpts: {
-      merges: true
+      merges: null
     },
     headerPattern: /^\[(.*)] (.*)$/,
     headerCorrespondence: [
