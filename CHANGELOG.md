@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.6...v1.0.7) (2023-10-18)
+
+### :building_construction: Tech
+
+- Supprimer le test du titre de l'action auto-merge
+
 ## [1.0.6](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.5...v1.0.6) (2023-10-18)
 
 ### :building_construction: Tech
