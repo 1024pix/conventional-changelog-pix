@@ -8,6 +8,7 @@ export function createParserOpts () {
       'tag',
       'scope',
     ],
+    mergePattern: /(#.*)/
     mergeCorrespondence: ['pr'],
   }
 }
