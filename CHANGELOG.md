@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.5...v1.0.6) (2023-10-18)
+
+### :building_construction: Tech
+
+-  Ne pas créer des tirets inutiles dans le changelog 
+-  -  -
+
 ## [1.0.5](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.4...v1.0.5) (2023-10-18)
 
 ### :bug: Correction
