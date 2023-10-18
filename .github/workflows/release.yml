@@ -1,4 +1,4 @@
-name: automerge check
+name: release
 
 on:
   push:

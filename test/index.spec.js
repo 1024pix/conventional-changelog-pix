@@ -10,8 +10,8 @@ describe('conventional-changelog-ember', () => {
     testTools = new TestTools()
 
     testTools.gitInit()
-    testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests'])
-    testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.'])
+    testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', 'foo'])
+    testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', 'bar'])
     testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.'])
     testTools.gitDummyCommit(['[DOC] Make ArrayProxy public'])
     testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public'])
