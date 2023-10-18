@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rm -rf dist/templates && tsup --onSuccess 'mkdir -p dist/templates && cp -r src/templates/ dist/templates/'",
+    "build": "rm -rf dist/templates && tsup --onSuccess 'mkdir -p dist/templates && cp -R src/templates dist/'",
     "prepublish": "npm run build",
     "test": "vitest"
   },
