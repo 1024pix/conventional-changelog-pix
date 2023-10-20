@@ -12,11 +12,13 @@ describe('conventional-changelog-ember', () => {
     testTools.gitInit()
     testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', 'foo'])
     testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', 'bar'])
+    testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying  # render to views/components.', 'bar'])
     testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.'])
     testTools.gitDummyCommit(['[DOC] Make ArrayProxy public'])
     testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public'])
     testTools.gitDummyCommit('Bad commit')
     testTools.gitDummyCommit('Merge pull request #2000000 from jayphelps/remove-ember-views-component-block-info')
+    testTools.gitDummyCommit('Merge pull request #2 from jayphelps/remove-ember-views-component-block-info')
   })
 
   afterEach(() => {
@@ -36,15 +38,20 @@ describe('conventional-changelog-ember', () => {
 ### :rocket: Amélioration
 
 - remove feature info and unflag tests
+
 ### :bug: Correction
 
+- Deprecate specifying  # render to views/components.
 - Deprecate specifying .render to views/components.
+
 ### :building_construction: Tech
 
 - Ensure primitive value contexts are escaped.
+
 ### :arrow_up: Montée de version
 
 - Mark Ember.Array methods as public
+
 ### :coffee: Autre
 
 - Make ArrayProxy public
