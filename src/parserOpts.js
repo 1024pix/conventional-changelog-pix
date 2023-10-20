@@ -9,5 +9,10 @@ export function createParserOpts () {
       'scope',
       'pr'
     ],
+    mergePattern: /^\[(.*)] (.*)$/,
+    mergeCorrespondence: [
+      'tag',
+      'scope'
+    ],
   }
 }
