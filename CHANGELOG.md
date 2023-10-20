@@ -1,3 +1,9 @@
+# [1.2.0](https://github.com/1024pix/conventional-changelog-pix/compare/v1.1.1...v1.2.0) (2023-10-20)
+
+### :rocket: Amélioration
+
+- [22](https://github.com/1024pix/conventional-changelog-pix/pull/22)Améliorer l'affichage du lien de la PR dans le changelog
+
 ## [1.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v1.1.0...v1.1.1) (2023-10-20)
 
 ### :coffee: Autre
