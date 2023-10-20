@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.8...v1.0.9) (2023-10-20)
+
+### :coffee: Autre
+
+- Améliorer le readme
+
 ## [1.0.8](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.7...v1.0.8) (2023-10-20)
 
 ### :bug: Correction
