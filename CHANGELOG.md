@@ -2,13 +2,13 @@
 
 ### :rocket: Amélioration
 
-- [22](https://github.com/1024pix/conventional-changelog-pix/pull/22)Améliorer l'affichage du lien de la PR dans le changelog
+- [#22](https://github.com/1024pix/conventional-changelog-pix/pull/22) Améliorer l'affichage du lien de la PR dans le changelog
 
 ## [1.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v1.1.0...v1.1.1) (2023-10-20)
 
 ### :coffee: Autre
 
-- [21](https://github.com/1024pix/conventional-changelog-pix/pull/21)Améliorer la clareté du README
+- [#21](https://github.com/1024pix/conventional-changelog-pix/pull/21) Améliorer la clareté du README
 
 # [1.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.9...v1.1.0) (2023-10-20)
 
