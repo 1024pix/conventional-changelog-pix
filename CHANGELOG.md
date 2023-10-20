@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.9...v1.1.0) (2023-10-20)
+
+### :rocket: Amélioration
+
+- Récupérer le numéro de PR pour le mettre dans le changelog.
+
 ## [1.0.9](https://github.com/1024pix/conventional-changelog-pix/compare/v1.0.8...v1.0.9) (2023-10-20)
 
 ### :coffee: Autre
