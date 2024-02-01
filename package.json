@@ -3,8 +3,6 @@
   "type": "module",
   "version": "0.3.0",
   "description": "conventional-changelog pix preset",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
