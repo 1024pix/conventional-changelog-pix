@@ -19,7 +19,6 @@ jobs:
           node-version: 18
 
       - run: npm ci
-      - run: npm run build
 
       - uses: 1024pix/pix-actions/release@main
         with:
