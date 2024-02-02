@@ -1,7 +1,7 @@
 {
   "name": "@1024pix/conventional-changelog-pix",
   "type": "module",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "conventional-changelog pix preset",
   "main": "src/index.js",
   "files": [
