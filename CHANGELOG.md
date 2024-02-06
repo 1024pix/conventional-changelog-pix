@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.0...v2.0.1) (2024-02-06)
+
+### :bug: Correction
+
+- [#30](https://github.com/1024pix/conventional-changelog-pix/pull/30) Utiliser le bon versionnage
+
 ## [1.2.1](https://github.com/1024pix/conventional-changelog-pix/compare/v1.2.0...v1.2.1) (2023-10-20)
 
 ### :coffee: Autre
