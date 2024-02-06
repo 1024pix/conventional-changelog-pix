@@ -8,10 +8,10 @@ export function createConventionalRecommendedBumpOpts (parserOpts) {
       let features = 0
 
       commits.forEach(commit => {
-        if (commit.notes.length > 0) {
-          breakings += commit.notes.length
+        if (commit.tag === 'BREAKING') {
+          breakings += 1
           level = 0
-        } else if (commit.type === 'feat') {
+        } else if (commit.tag === 'FEATURE') {
           features += 1
           if (level === 2) {
             level = 1
