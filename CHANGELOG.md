@@ -1,3 +1,9 @@
+# [2.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.2...v2.1.0) (2024-02-07)
+
+### :rocket: Amélioration
+
+- [#32](https://github.com/1024pix/conventional-changelog-pix/pull/32) Analyser uniquement les commits de merge
+
 ## [2.0.2](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.1...v2.0.2) (2024-02-07)
 
 ### :building_construction: Tech
