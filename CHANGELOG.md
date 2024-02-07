@@ -1,3 +1,9 @@
+## [2.0.2](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.1...v2.0.2) (2024-02-07)
+
+### :building_construction: Tech
+
+- [#31](https://github.com/1024pix/conventional-changelog-pix/pull/31) Mettre à jour la version de node utilisé dans l'action `release`.
+
 ## [2.0.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.0...v2.0.1) (2024-02-06)
 
 ### :bug: Correction
