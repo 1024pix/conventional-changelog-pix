@@ -22,6 +22,10 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
+      if (!commit.pr) {
+        return
+      }
+
       if (commit.tag === 'BREAKING') {
         commit.tag = ':boom: BREAKING CHANGE'
       } else if (commit.tag === 'BUGFIX') {
