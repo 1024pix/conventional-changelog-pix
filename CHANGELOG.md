@@ -1,3 +1,9 @@
+## [2.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.0...v2.1.1) (2024-03-06)
+
+### :building_construction: Tech
+
+- [#33](https://github.com/1024pix/conventional-changelog-pix/pull/33) Ajouter des tests sur le résultat attendu après parsing.
+
 # [2.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.0.2...v2.1.0) (2024-02-07)
 
 ### :rocket: Amélioration
