@@ -1,3 +1,9 @@
+## [2.1.3](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.2...v2.1.3) (2024-03-06)
+
+### :arrow_up: Montée de version
+
+- [#27](https://github.com/1024pix/conventional-changelog-pix/pull/27) Update dependency vitest to v1 (dossier racine)
+
 ## [2.1.2](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.1...v2.1.2) (2024-03-06)
 
 ### :bug: Correction
