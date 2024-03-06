@@ -1,3 +1,9 @@
+## [2.1.2](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.1...v2.1.2) (2024-03-06)
+
+### :bug: Correction
+
+- [#34](https://github.com/1024pix/conventional-changelog-pix/pull/34) Générer le changelog uniquement avec les PRs
+
 ## [2.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.0...v2.1.1) (2024-03-06)
 
 ### :building_construction: Tech
