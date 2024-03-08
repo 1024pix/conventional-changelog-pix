@@ -12,5 +12,11 @@ export function createParserOpts () {
       'tag',
       'scope'
     ],
+    revertPattern: /^(?:Revert)\s"\[?([\S]+?)]\s(.*)"[\s]+?#(\d+)/,
+    revertCorrespondence: [
+      'tag',
+      'scope',
+      'pr'
+    ],
   }
 }
