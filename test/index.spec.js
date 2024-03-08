@@ -13,12 +13,15 @@ describe('conventional-changelog-ember', () => {
       testTools = new TestTools()
 
       testTools.gitInit()
+      // good commits
       testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', ' #123'])
       testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', ' #456'])
       testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying  # render to views/components.', ' #789'])
       testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.', ' #101112'])
       testTools.gitDummyCommit(['[DOC] Make ArrayProxy public', ' #131415'])
       testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public', ' #161718'])
+      testTools.gitDummyCommit(['Revert \\"[TECH] Déplacer le plugin eslint 1024pix\\"', ' #101112'])
+      // Bad commmits
       testTools.gitDummyCommit('Bad commit')
       testTools.gitDummyCommit('Merge pull request #2000000 from jayphelps/remove-ember-views-component-block-info')
       testTools.gitDummyCommit('Merge pull request #2 from jayphelps/remove-ember-views-component-block-info')
@@ -48,6 +51,10 @@ describe('conventional-changelog-ember', () => {
 
 - [#789](/pull/789) Deprecate specifying  # render to views/components.
 - [#456](/pull/456) Deprecate specifying .render to views/components.
+
+### :rewind: Retour en arrière
+
+- [#101112](/pull/101112) Déplacer le plugin eslint 1024pix
 
 ### :building_construction: Tech
 

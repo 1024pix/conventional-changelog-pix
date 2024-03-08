@@ -22,8 +22,14 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
-      if (!commit.pr) {
+      if (!commit.pr && !commit.revert?.pr) {
         return
+      }
+
+      if (commit.revert) {
+        commit.pr = commit.revert.pr
+        commit.scope = commit.revert.scope
+        commit.tag = 'REVERT'
       }
 
       if (commit.tag === 'BREAKING') {
@@ -36,6 +42,8 @@ function getWriterOpts () {
         commit.tag = ':arrow_up: Montée de version'
       } else if (commit.tag === 'TECH') {
         commit.tag = ':building_construction: Tech'
+      } else if (commit.tag === 'REVERT') {
+        commit.tag = ':rewind: Retour en arrière'
       } else if (commit.tag) {
         commit.tag = ':coffee: Autre'
       }
@@ -52,6 +60,7 @@ function getWriterOpts () {
         ':boom: BREAKING CHANGE',
         ':rocket: Amélioration',
         ':bug: Correction',
+        ':rewind: Retour en arrière',
         ':building_construction: Tech',
         ':arrow_up: Montée de version',
         ':coffee: Autre'
