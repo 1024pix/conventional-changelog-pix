@@ -23,7 +23,7 @@
   "devDependencies": {
     "conventional-changelog-core": "^7.0.0",
     "conventional-commits-parser": "^5.0.0",
-    "conventional-recommended-bump": "^9.0.0",
+    "conventional-recommended-bump": "^10.0.0",
     "tmp": "^0.2.1",
     "vite": "^4.4.9",
     "vitest": "^1.0.0"
