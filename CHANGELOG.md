@@ -1,3 +1,9 @@
+# [2.3.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.2.0...v2.3.0) (2024-07-17)
+
+### :rocket: Amélioration
+
+- [#39](https://github.com/1024pix/conventional-changelog-pix/pull/39) Prendre en compte les revert mergé manuellement.
+
 # [2.2.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.1.3...v2.2.0) (2024-03-08)
 
 ### :rocket: Amélioration
