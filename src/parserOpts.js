@@ -7,10 +7,11 @@ export function createParserOpts () {
     headerCorrespondence: [
       'pr'
     ],
-    mergePattern: /^\[(.*)] (.*)$/,
+    mergePattern: /^\[(.*)] (.*?)(?: \(#(\d+)\))?$/,
     mergeCorrespondence: [
       'tag',
-      'scope'
+      'scope',
+      'prNumberFromTitle'
     ],
     revertPattern: /^(?:Revert)\s"\[?([\S]+?)]\s(.*)"[\W]+?#(\d+)/,
     revertCorrespondence: [

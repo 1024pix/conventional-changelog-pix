@@ -16,6 +16,7 @@ describe('Integration', () => {
       expect(pickNecessary(simpleCommit)).toEqual({
         header: "fix(scope1): First fix",
         pr: null,
+        prNumberFromTitle: null,
         scope: null,
         tag: null,
         merge: null,
@@ -23,7 +24,7 @@ describe('Integration', () => {
       });
     });
 
-    test('it should return necessary fields for Pix merge commit', async () => {
+    test('it should return necessary fields for Pix auto-merge commit', async () => {
       const mergeCommit = parser("[FEATURE] Second feature \n\n #12", parserOpts);
 
       expect(pickNecessary(mergeCommit)).toEqual({
@@ -32,7 +33,22 @@ describe('Integration', () => {
         scope: "Second feature ",
         tag: "FEATURE",
         merge: '[FEATURE] Second feature ',
-        revert: null
+        revert: null,
+        prNumberFromTitle: null,
+      });
+    });
+
+    test('it should return necessary fields for Pix  squash & merge commit', async () => {
+      const mergeCommit = parser("[FEATURE] Second feature (ISSUE-13202) (#12)", parserOpts);
+
+      expect(pickNecessary(mergeCommit)).toEqual({
+        header: "",
+        pr: null,
+        scope: "Second feature (ISSUE-13202)",
+        tag: "FEATURE",
+        merge: '[FEATURE] Second feature (ISSUE-13202) (#12)',
+        revert: null,
+        prNumberFromTitle: '12',
       });
     });
 
@@ -45,7 +61,8 @@ describe('Integration', () => {
         pr: null,
         scope: "Third feature",
         tag: "FEATURE",
-        revert: null
+        revert: null,
+        prNumberFromTitle: null,
       });
     });
 
@@ -58,6 +75,7 @@ describe('Integration', () => {
         tag: null,
         merge: null,
         pr: null,
+        prNumberFromTitle: null,
         revert: {
           pr: "123",
           scope: "Déplacer le plugin eslint 1024pix",
@@ -70,11 +88,12 @@ describe('Integration', () => {
       const revertCommit = parser("Revert \"[TECH] Déplacer le plugin eslint 1024pix\" (#123)\n\n #123", parserOpts);
 
       expect(pickNecessary(revertCommit)).toEqual({
-        header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix\"",
+        header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix\" (#123)",
         scope: null,
         tag: null,
         merge: null,
         pr: null,
+        prNumberFromTitle: null,
         revert: {
           pr: "123",
           scope: "Déplacer le plugin eslint 1024pix",
@@ -92,6 +111,7 @@ const pickNecessary = (commit) => {
     tag: commit.tag,
     scope: commit.scope,
     merge: commit.merge,
-    revert: commit.revert
+    revert: commit.revert,
+    prNumberFromTitle: commit.prNumberFromTitle,
   }
 }
