@@ -22,7 +22,7 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
-      if (!commit.pr && !commit.revert?.pr) {
+      if (!commit.pr && !commit.revert?.pr && !commit.prNumberFromTitle) {
         return
       }
 
@@ -30,6 +30,10 @@ function getWriterOpts () {
         commit.pr = commit.revert.pr
         commit.scope = commit.revert.scope
         commit.tag = 'REVERT'
+      }
+
+      if (!commit.pr && commit.prNumberFromTitle) {
+        commit.pr = commit.prNumberFromTitle
       }
 
       if (commit.tag === 'BREAKING') {

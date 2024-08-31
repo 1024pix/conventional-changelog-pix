@@ -21,6 +21,7 @@ describe('conventional-changelog-ember', () => {
       testTools.gitDummyCommit(['[DOC] Make ArrayProxy public', ' #131415'])
       testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public', ' #161718'])
       testTools.gitDummyCommit(['Revert \\"[TECH] Déplacer le plugin eslint 1024pix\\"', ' #101112'])
+      testTools.gitDummyCommit(['[BREAKING] Break everything 😈 (#666)'])
       // Bad commmits
       testTools.gitDummyCommit('Bad commit')
       testTools.gitDummyCommit('Merge pull request #2000000 from jayphelps/remove-ember-views-component-block-info')
@@ -34,15 +35,11 @@ describe('conventional-changelog-ember', () => {
     })
 
     it('should return changelog with specific order', async () => {
-      for await (let chunk of conventionalChangelogCore(
-        {
-          cwd: testTools.cwd,
-          config: preset
-        }
-      )) {
-        chunk = chunk.toString()
+      const expectedOutput = `
+### :boom: BREAKING CHANGE
 
-        const expectedOutput = `
+- [#666](/pull/666) Break everything 😈
+
 ### :rocket: Amélioration
 
 - [#123](/pull/123) remove feature info and unflag tests
@@ -67,12 +64,16 @@ describe('conventional-changelog-ember', () => {
 ### :coffee: Autre
 
 - [#131415](/pull/131415) Make ArrayProxy public`
-        expect(chunk.includes(expectedOutput)).toBeTruthy()
 
-        expect(chunk).not.toContain('CLEANUP')
-        expect(chunk).not.toContain('FEATURE')
-        expect(chunk).not.toContain('Bad')
-      }
+      // when
+      let changelog = await getChangelog(testTools);
+
+      // then
+      expect(changelog).toContain(expectedOutput);
+
+      expect(changelog).not.toContain('CLEANUP')
+      expect(changelog).not.toContain('FEATURE')
+      expect(changelog).not.toContain('Bad')
     })
   })
 
@@ -120,3 +121,16 @@ describe('conventional-changelog-ember', () => {
     })
   })
 })
+
+async function getChangelog(testTools) {
+  let changelog = ``
+  for await (let chunk of conventionalChangelogCore(
+    {
+      cwd: testTools.cwd,
+      config: preset
+    }
+  )) {
+    changelog += chunk.toString();
+  }
+  return changelog;
+}
