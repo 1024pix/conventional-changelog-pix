@@ -36,6 +36,19 @@ describe('Integration', () => {
       });
     });
 
+    test('it should return first targ for Pix merge commit even whith two tag', async () => {
+      const mergeCommit = parser("[BREAKING][DESIGN] Second feature \n\n #12", parserOpts);
+
+      expect(pickNecessary(mergeCommit)).toEqual({
+        header: " #12",
+        pr: "12",
+        scope: "[DESIGN] Second feature ",
+        tag: "BREAKING",
+        merge: '[BREAKING][DESIGN] Second feature ',
+        revert: null
+      });
+    });
+
     test('it should return necessary fields without pr when pr number is not in description', async () => {
       const commitWithTagButWithoutPRNumberInDescription = parser("[FEATURE] Third feature", parserOpts);
 
