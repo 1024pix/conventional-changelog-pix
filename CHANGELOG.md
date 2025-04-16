@@ -1,3 +1,9 @@
+## [2.3.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.0...v2.3.1) (2025-04-16)
+
+### :bug: Correction
+
+- [#48](https://github.com/1024pix/conventional-changelog-pix/pull/48) Rétirer l'espace nécessaire dans le commit de merge
+
 # [2.3.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.2.0...v2.3.0) (2024-07-17)
 
 ### :rocket: Amélioration
