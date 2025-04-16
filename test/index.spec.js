@@ -54,7 +54,7 @@ describe('conventional-changelog-ember', () => {
 
 ### :rewind: Retour en arrière
 
-- [#101112](/pull/101112) Déplacer le plugin eslint 1024pix
+- [#101112](/pull/101112) Revert "[TECH] Déplacer le plugin eslint 1024pix"
 
 ### :building_construction: Tech
 
