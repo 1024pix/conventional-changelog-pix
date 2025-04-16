@@ -67,17 +67,17 @@ describe('Integration', () => {
     });
 
     test('revert commit should be parsed correctly with pr number in title', async () => {
-      const revertCommit = parser("Revert \"[TECH] Déplacer le plugin eslint 1024pix\" (#123)\n\n #123", parserOpts);
+      const revertCommit = parser("Revert \"[TECH] Déplacer le plugin eslint 1024pix (PIX-1234)\"\n\n #123", parserOpts);
 
       expect(pickNecessary(revertCommit)).toEqual({
-        header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix\"",
+        header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix (PIX-1234)\"",
         scope: null,
         tag: null,
         merge: null,
         pr: null,
         revert: {
           pr: "123",
-          scope: "Déplacer le plugin eslint 1024pix",
+          scope: "Déplacer le plugin eslint 1024pix (PIX-1234)",
           tag: "TECH",
         }
       });

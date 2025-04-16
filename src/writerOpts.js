@@ -28,7 +28,7 @@ function getWriterOpts () {
 
       if (commit.revert) {
         commit.pr = commit.revert.pr
-        commit.scope = commit.revert.scope
+        commit.scope = `Revert "[${commit.revert.tag}] ${commit.revert.scope}"`
         commit.tag = 'REVERT'
       }
 
