@@ -14,9 +14,9 @@ describe('conventional-changelog-ember', () => {
 
       testTools.gitInit()
       // good commits
-      testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', ' #123'])
-      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', ' #456'])
-      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying  # render to views/components.', ' #789'])
+      testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', '#123'])
+      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', '#456'])
+      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying  # render to views/components.', '#789'])
       testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.', ' #101112'])
       testTools.gitDummyCommit(['[DOC] Make ArrayProxy public', ' #131415'])
       testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public', ' #161718'])
@@ -67,7 +67,7 @@ describe('conventional-changelog-ember', () => {
 ### :coffee: Autre
 
 - [#131415](/pull/131415) Make ArrayProxy public`
-        expect(chunk.includes(expectedOutput)).toBeTruthy()
+        await expect(chunk).to.contain(expectedOutput)
 
         expect(chunk).not.toContain('CLEANUP')
         expect(chunk).not.toContain('FEATURE')
