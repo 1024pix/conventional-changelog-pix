@@ -1,3 +1,6 @@
+/* 
+* semantic-release utilise uniquement : writerOpts et parserOpts, cela ne sert donc à rien de modifier createConventionalRecommendedBumpOpts qui correspond aux attentes de conventional-changelog mais pas de semantic-release.
+*/
 export function createConventionalRecommendedBumpOpts (parserOpts) {
   return {
     parserOpts,
