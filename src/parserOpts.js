@@ -7,7 +7,7 @@ export function createParserOpts () {
     headerCorrespondence: [
       'pr'
     ],
-    mergePattern: /^\[(.*)] (.*)$/,
+    mergePattern: /^\[([A-Z]+)\]?\s*(.*)$/,
     mergeCorrespondence: [
       'tag',
       'scope'
