@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/1024pix/conventional-changelog-pix/issues"
   },
+  "engines": {
+    "node": "^24.11.1"
+  },
   "homepage": "https://github.com/1024pix/conventional-changelog-pix#readme",
   "devDependencies": {
     "conventional-changelog": "^7.0.0",
