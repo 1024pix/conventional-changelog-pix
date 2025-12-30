@@ -1,3 +1,9 @@
+## [2.3.3](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.2...v2.3.3) (2025-12-30)
+
+### :building_construction: Tech
+
+- [#56](https://github.com/1024pix/conventional-changelog-pix/pull/56) Permettre à l'aciton de release d'écrire des commentaires sur les PR
+
 ## <small>2.3.2 (2025-12-30)</small>
 
 * [BUMP] Update dependency conventional-changelog-core to v8 (dossier racine) ([268f9bb](https://github.com/1024pix/conventional-changelog-pix/commit/268f9bb))
