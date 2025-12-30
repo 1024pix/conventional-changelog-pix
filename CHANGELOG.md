@@ -1,3 +1,21 @@
+## <small>2.3.2 (2025-12-30)</small>
+
+* [BUMP] Update dependency conventional-changelog-core to v8 (dossier racine) ([268f9bb](https://github.com/1024pix/conventional-changelog-pix/commit/268f9bb))
+* [BUMP] Update dependency conventional-changelog-core to v8 (dossier racine)  ([eb4fd01](https://github.com/1024pix/conventional-changelog-pix/commit/eb4fd01)), closes [#36](https://github.com/1024pix/conventional-changelog-pix/issues/36)
+* [BUMP] Update dependency vite to v5 (dossier racine) ([925e3f3](https://github.com/1024pix/conventional-changelog-pix/commit/925e3f3))
+* [BUMP] Update dependency vite to v5 (dossier racine)  ([9f8d94f](https://github.com/1024pix/conventional-changelog-pix/commit/9f8d94f)), closes [#25](https://github.com/1024pix/conventional-changelog-pix/issues/25)
+* [BUMP] Update Node.js to ^24.12.0 ([004e8dd](https://github.com/1024pix/conventional-changelog-pix/commit/004e8dd))
+* [BUMP] Update Node.js to ^24.12.0  ([762bc99](https://github.com/1024pix/conventional-changelog-pix/commit/762bc99)), closes [#53](https://github.com/1024pix/conventional-changelog-pix/issues/53)
+* [TECH] Mettre à jour les versions de conventional-changelog ([939c06f](https://github.com/1024pix/conventional-changelog-pix/commit/939c06f)), closes [#52](https://github.com/1024pix/conventional-changelog-pix/issues/52)
+* [TECH] Permettre à l'action de release de push un commit  ([d0d6b32](https://github.com/1024pix/conventional-changelog-pix/commit/d0d6b32)), closes [#55](https://github.com/1024pix/conventional-changelog-pix/issues/55)
+* add message to prevent error ([62902d0](https://github.com/1024pix/conventional-changelog-pix/commit/62902d0))
+* Revert "[BUMP] Update dependency conventional-changelog-core to v8 (dossier racine)" ([4eb3af1](https://github.com/1024pix/conventional-changelog-pix/commit/4eb3af1)), closes [#51](https://github.com/1024pix/conventional-changelog-pix/issues/51)
+* Revert "[BUMP] Update dependency conventional-changelog-core to v8 (dossier racine)" ([1473978](https://github.com/1024pix/conventional-changelog-pix/commit/1473978))
+* tech: allow content write in release action ([a8686c9](https://github.com/1024pix/conventional-changelog-pix/commit/a8686c9))
+* tech: set node version ([36d73bf](https://github.com/1024pix/conventional-changelog-pix/commit/36d73bf))
+* tech: upgrade conventional changelog versions ([b4a8dd2](https://github.com/1024pix/conventional-changelog-pix/commit/b4a8dd2))
+* fix: npm package publishing ([5db6332](https://github.com/1024pix/conventional-changelog-pix/commit/5db6332))
+
 ## [2.3.1](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.0...v2.3.1) (2025-04-16)
 
 ### :bug: Correction
