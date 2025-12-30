@@ -1,12 +1,23 @@
 import { describe, beforeEach, afterEach, it, expect } from 'vitest'
-import conventionalChangelogCore from 'conventional-changelog-core'
-import conventionalRecommendedBump from 'conventional-recommended-bump';
+import { ConventionalChangelog } from 'conventional-changelog';
+import { Bumper } from 'conventional-recommended-bump';
 import { TestTools } from './tools/test-tools.js'
 import preset from '../src/index.js'
 
 let testTools
 
-describe('conventional-changelog-ember', () => {
+describe('conventional-changelog-pix', () => {
+
+  let config;
+
+  beforeEach(async () => {
+    config =  {
+      ...await preset(),
+      commits: {
+        merges: false // we do not do merge commits in tests
+      }
+    };
+  })
 
   describe('Changelog', () => {
     beforeEach(() => {
@@ -34,15 +45,14 @@ describe('conventional-changelog-ember', () => {
     })
 
     it('should return changelog with specific order', async () => {
-      for await (let chunk of conventionalChangelogCore(
-        {
-          cwd: testTools.cwd,
-          config: preset
-        }
-      )) {
+      const conventionalChangelog = new ConventionalChangelog(testTools.cwd);
+      conventionalChangelog.config(config);
+
+      for await (let chunk of conventionalChangelog.writeStream()) {
         chunk = chunk.toString()
 
-        const expectedOutput = `
+        const expectedOutput = `#  (${new Date().toISOString().substring(0, 10)})
+
 ### :rocket: Amélioration
 
 - [#123](/pull/123) remove feature info and unflag tests
@@ -92,15 +102,13 @@ describe('conventional-changelog-ember', () => {
       { commitTitles: ['[FEATURE] remove feature info and unflag tests'], expectedReleaseType: 'minor' },
       { commitTitles: ['[BUGFIX] remove feature info and unflag tests'], expectedReleaseType: 'patch' },
     ]
-      
+
     testCases.forEach(({ commitTitles, expectedReleaseType }) => {
       it(`should return ${expectedReleaseType}`, async () => {
         commitTitles.forEach(title => testTools.gitDummyCommit([title]))
 
-        const recommendation = await conventionalRecommendedBump({
-          cwd: testTools.cwd,
-          config: await preset()
-        }, {})
+        const bumper = new Bumper(testTools.cwd).config(config);
+        const recommendation = await bumper.bump(config.whatBump);
 
         expect(recommendation.releaseType).toBe(expectedReleaseType)
       })
@@ -111,10 +119,8 @@ describe('conventional-changelog-ember', () => {
       testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests'])
       testTools.gitDummyCommit(['[BUGFIX] remove feature info and unflag tests'])
 
-      const recommendation = await conventionalRecommendedBump({
-        cwd: testTools.cwd,
-        config: await preset()
-      }, {})
+      const bumper = new Bumper(testTools.cwd).config(config);
+      const recommendation = await bumper.bump(config.whatBump);
 
       expect(recommendation.releaseType).toBe('major')
     })
