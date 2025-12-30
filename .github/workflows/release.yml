@@ -8,15 +8,18 @@ on:
     types: [ 'deploy' ]
   workflow_dispatch:
 
+permissions:
+  id-token: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
 
       - run: npm ci
 
@@ -25,4 +28,3 @@ jobs:
           npmPublish: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
