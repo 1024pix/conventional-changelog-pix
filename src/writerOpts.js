@@ -22,38 +22,37 @@ export async function createWriterOpts () {
 function getWriterOpts () {
   return {
     transform: (commit) => {
-      let { pr, tag, scope, shortHash } = commit;
       if (!commit.pr && !commit.revert?.pr) {
         return
       }
 
       if (commit.revert) {
-        pr = commit.revert.pr
-        scope = `Revert "[${commit.revert.tag}] ${commit.revert.scope}"`
-        tag = 'REVERT'
+        commit.pr = commit.revert.pr
+        commit.scope = `Revert "[${commit.revert.tag}] ${commit.revert.scope}"`
+        commit.tag = 'REVERT'
       }
 
       if (commit.tag === 'BREAKING') {
-        tag = ':boom: BREAKING CHANGE'
+        commit.tag = ':boom: BREAKING CHANGE'
       } else if (commit.tag === 'BUGFIX') {
-        tag = ':bug: Correction'
+        commit.tag = ':bug: Correction'
       } else if (commit.tag === 'FEATURE') {
-        tag = ':rocket: Amélioration'
+        commit.tag = ':rocket: Amélioration'
       } else if (commit.tag === 'BUMP') {
-        tag = ':arrow_up: Montée de version'
+        commit.tag = ':arrow_up: Montée de version'
       } else if (commit.tag === 'TECH') {
-        tag = ':building_construction: Tech'
-      } else if (tag === 'REVERT') {
-        tag = ':rewind: Retour en arrière'
+        commit.tag = ':building_construction: Tech'
+      } else if (commit.tag === 'REVERT') {
+        commit.tag = ':rewind: Retour en arrière'
       } else if (commit.tag) {
-        tag = ':coffee: Autre'
+        commit.tag = ':coffee: Autre'
       }
 
       if (typeof commit.hash === 'string') {
-        shortHash = commit.hash.substring(0, 7)
+        commit.shortHash = commit.hash.substring(0, 7)
       }
 
-      return { pr, tag, scope, shortHash };
+      return commit
     },
     groupBy: 'tag',
     commitGroupsSort: (a,b) => {
