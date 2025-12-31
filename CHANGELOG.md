@@ -1,3 +1,9 @@
+# [3.0.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.3...v3.0.0) (2025-12-31)
+
+### :boom: BREAKING CHANGE
+
+- [#59](https://github.com/1024pix/conventional-changelog-pix/pull/59) Mettre à jour la syntaxe en accord avec les dernières versions de sementic-release
+
 ## [2.3.3](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.2...v2.3.3) (2025-12-30)
 
 ### :building_construction: Tech
