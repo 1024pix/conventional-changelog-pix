@@ -1,31 +1,30 @@
 import preset from '../src/index.js';
 import { beforeEach, describe, test, expect, vi } from 'vitest';
-import { CommitParser } from 'conventional-commits-parser';
+import { sync as parser } from 'conventional-commits-parser';
 
 describe('Integration', () => {
   describe('conventional-commits-parser', () => {
-    let parser;
+    let parserOpts;
 
     beforeEach(async () => {
-      const parserOpts = (await preset()).parser;
-      parser = new CommitParser(parserOpts);
+      parserOpts = (await preset()).parserOpts;
     });
 
     test('it should return null for conventional commits', async () => {
-      const simpleCommit = parser.parse("fix(scope1): First fix");
+      const simpleCommit = parser("fix(scope1): First fix", parserOpts);
 
       expect(pickNecessary(simpleCommit)).toEqual({
         header: "fix(scope1): First fix",
-        pr: undefined,
-        scope: undefined,
-        tag: undefined,
+        pr: null,
+        scope: null,
+        tag: null,
         merge: null,
         revert: null
       });
     });
 
     test('it should return necessary fields for Pix merge commit', async () => {
-      const mergeCommit = parser.parse("[FEATURE] Second feature \n\n #12");
+      const mergeCommit = parser("[FEATURE] Second feature \n\n #12", parserOpts);
 
       expect(pickNecessary(mergeCommit)).toEqual({
         header: " #12",
@@ -38,12 +37,12 @@ describe('Integration', () => {
     });
 
     test('it should return necessary fields without pr when pr number is not in description', async () => {
-      const commitWithTagButWithoutPRNumberInDescription = parser.parse("[FEATURE] Third feature");
+      const commitWithTagButWithoutPRNumberInDescription = parser("[FEATURE] Third feature", parserOpts);
 
       expect(pickNecessary(commitWithTagButWithoutPRNumberInDescription)).toEqual({
-        header: null,
+        header: '',
         merge: "[FEATURE] Third feature",
-        pr: undefined,
+        pr: null,
         scope: "Third feature",
         tag: "FEATURE",
         revert: null
@@ -51,14 +50,14 @@ describe('Integration', () => {
     });
 
     test('revert commit should be parsed correctly', async () => {
-      const revertCommit = parser.parse("Revert \"[TECH] Déplacer le plugin eslint 1024pix\"\n\n #123");
+      const revertCommit = parser("Revert \"[TECH] Déplacer le plugin eslint 1024pix\"\n\n #123", parserOpts);
 
       expect(pickNecessary(revertCommit)).toEqual({
         header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix\"",
-        scope: undefined,
-        tag: undefined,
+        scope: null,
+        tag: null,
         merge: null,
-        pr: undefined,
+        pr: null,
         revert: {
           pr: "123",
           scope: "Déplacer le plugin eslint 1024pix",
@@ -68,14 +67,14 @@ describe('Integration', () => {
     });
 
     test('revert commit should be parsed correctly with pr number in title', async () => {
-      const revertCommit = parser.parse("Revert \"[TECH] Déplacer le plugin eslint 1024pix (PIX-1234)\"\n\n #123");
+      const revertCommit = parser("Revert \"[TECH] Déplacer le plugin eslint 1024pix (PIX-1234)\"\n\n #123", parserOpts);
 
       expect(pickNecessary(revertCommit)).toEqual({
         header: "Revert \"[TECH] Déplacer le plugin eslint 1024pix (PIX-1234)\"",
-        scope: undefined,
-        tag: undefined,
+        scope: null,
+        tag: null,
         merge: null,
-        pr: undefined,
+        pr: null,
         revert: {
           pr: "123",
           scope: "Déplacer le plugin eslint 1024pix (PIX-1234)",
