@@ -1,3 +1,5 @@
+# [3.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v3.0.0...v3.1.0) (2026-06-19)
+
 # [3.0.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.3...v3.0.0) (2025-12-31)
 
 ### :boom: BREAKING CHANGE
