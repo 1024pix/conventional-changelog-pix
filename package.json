@@ -28,7 +28,7 @@
     "conventional-commits-parser": "^6.4.0",
     "conventional-recommended-bump": "^11.2.0",
     "tmp": "^0.2.7",
-    "vite": "^5.4.21",
+    "vite": "^6.0.0",
     "vitest": "^1.6.1"
   }
 }
