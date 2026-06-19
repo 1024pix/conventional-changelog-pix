@@ -1,3 +1,10 @@
+## [3.1.2](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.1...v3.1.2) (2026-06-19)
+
+### :arrow_up: Montée de version
+
+- [#64](https://github.com/1024pix/conventional-changelog-pix/pull/64) Update dependency node to v24 (workflows)
+- [#63](https://github.com/1024pix/conventional-changelog-pix/pull/63) Update node to ^24.16.0
+
 ## [3.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.0...v3.1.1) (2026-06-19)
 
 ### :building_construction: Tech
