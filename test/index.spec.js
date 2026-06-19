@@ -11,12 +11,7 @@ describe('conventional-changelog-pix', () => {
   let config;
 
   beforeEach(async () => {
-    config =  {
-      ...await preset(),
-      commits: {
-        merges: false // we do not do merge commits in tests
-      }
-    };
+    config =  await preset();
   })
 
   describe('Changelog', () => {
@@ -25,18 +20,18 @@ describe('conventional-changelog-pix', () => {
 
       testTools.gitInit()
       // good commits
-      testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests', '#123'])
-      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying .render to views/components.', '#456'])
-      testTools.gitDummyCommit(['[BUGFIX] Deprecate specifying  # render to views/components.', '#789'])
-      testTools.gitDummyCommit(['[TECH] Ensure primitive value contexts are escaped.', ' #101112'])
-      testTools.gitDummyCommit(['[DOC] Make ArrayProxy public', ' #131415'])
-      testTools.gitDummyCommit(['[BUMP] Mark Ember.Array methods as public', ' #161718'])
-      testTools.gitDummyCommit(['Revert \\"[TECH] Déplacer le plugin eslint 1024pix\\"', ' #101112'])
+      testTools.gitDummyCommit('[FEATURE] remove feature info and unflag tests (PIX-1234) (#123)')
+      testTools.gitDummyCommit('[BUGFIX] Deprecate specifying .render to views/components. (#456)')
+      testTools.gitDummyCommit('[BUGFIX] Deprecate specifying  # render to views/components. (#789)')
+      testTools.gitDummyCommit('[TECH] Ensure primitive value contexts are escaped. (PIX-4567) (#101112)')
+      testTools.gitDummyCommit('[DOC] Make ArrayProxy public (#131415)')
+      testTools.gitDummyCommit('[BUMP] Mark Ember.Array methods as public (#161718)')
+      testTools.gitDummyCommit('Revert \\"[TECH] Déplacer le plugin eslint 1024pix (PIX-999) (#2)\\" (#101112)')
       // Bad commmits
       testTools.gitDummyCommit('Bad commit')
       testTools.gitDummyCommit('Merge pull request #2000000 from jayphelps/remove-ember-views-component-block-info')
       testTools.gitDummyCommit('Merge pull request #2 from jayphelps/remove-ember-views-component-block-info')
-      testTools.gitDummyCommit('Merge pull request #2 from jayphelps/remove-ember-views-component-block-info', ' #123')
+      testTools.gitDummyCommit('Merge pull request #2 from jayphelps/remove-ember-views-component-block-info (#123)')
       testTools.gitDummyCommit('[FEATURE] No pr in description : should no appear in changelog')
     })
 
@@ -48,14 +43,18 @@ describe('conventional-changelog-pix', () => {
       const conventionalChangelog = new ConventionalChangelog(testTools.cwd);
       conventionalChangelog.config(config);
 
+      let output = ''
+
       for await (let chunk of conventionalChangelog.writeStream()) {
         chunk = chunk.toString()
+        output += chunk
+      }
 
-        const expectedOutput = `#  (${new Date().toISOString().substring(0, 10)})
+      await expect(output).to.equal(`#  (${new Date().toISOString().substring(0, 10)})
 
 ### :rocket: Amélioration
 
-- [#123](/pull/123) remove feature info and unflag tests
+- [#123](/pull/123) remove feature info and unflag tests (PIX-1234)
 
 ### :bug: Correction
 
@@ -64,11 +63,11 @@ describe('conventional-changelog-pix', () => {
 
 ### :rewind: Retour en arrière
 
-- [#101112](/pull/101112) Revert "[TECH] Déplacer le plugin eslint 1024pix"
+- [#101112](/pull/101112) Revert "[TECH] Déplacer le plugin eslint 1024pix (PIX-999) (#2)"
 
 ### :building_construction: Tech
 
-- [#101112](/pull/101112) Ensure primitive value contexts are escaped.
+- [#101112](/pull/101112) Ensure primitive value contexts are escaped. (PIX-4567)
 
 ### :arrow_up: Montée de version
 
@@ -76,14 +75,13 @@ describe('conventional-changelog-pix', () => {
 
 ### :coffee: Autre
 
-- [#131415](/pull/131415) Make ArrayProxy public`
-        await expect(chunk).to.contain(expectedOutput)
+- [#131415](/pull/131415) Make ArrayProxy public
+`)
 
-        expect(chunk).not.toContain('CLEANUP')
-        expect(chunk).not.toContain('FEATURE')
-        expect(chunk).not.toContain('Bad')
-      }
-    })
+      expect(output).not.toContain('CLEANUP')
+      expect(output).not.toContain('FEATURE')
+      expect(output).not.toContain('Bad')
+  })
   })
 
   describe('Recommended bump', () => {
@@ -101,6 +99,8 @@ describe('conventional-changelog-pix', () => {
       { commitTitles: ['[BREAKING] remove feature info and unflag tests'], expectedReleaseType: 'major' },
       { commitTitles: ['[FEATURE] remove feature info and unflag tests'], expectedReleaseType: 'minor' },
       { commitTitles: ['[BUGFIX] remove feature info and unflag tests'], expectedReleaseType: 'patch' },
+      { commitTitles: ['[TECH] remove feature info and unflag tests'], expectedReleaseType: 'patch' },
+      { commitTitles: ['[BUMP] remove feature info and unflag tests'], expectedReleaseType: 'patch' },
     ]
 
     testCases.forEach(({ commitTitles, expectedReleaseType }) => {
@@ -118,6 +118,8 @@ describe('conventional-changelog-pix', () => {
       testTools.gitDummyCommit(['[BREAKING] remove feature info and unflag tests'])
       testTools.gitDummyCommit(['[FEATURE] remove feature info and unflag tests'])
       testTools.gitDummyCommit(['[BUGFIX] remove feature info and unflag tests'])
+      testTools.gitDummyCommit(['[TECH] remove feature info and unflag tests'])
+      testTools.gitDummyCommit(['[BUMP] remove feature info and unflag tests'])
 
       const bumper = new Bumper(testTools.cwd).config(config);
       const recommendation = await bumper.bump(config.whatBump);
