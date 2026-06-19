@@ -1,3 +1,9 @@
+## [3.1.1](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.0...v3.1.1) (2026-06-19)
+
+### :building_construction: Tech
+
+- [#62](https://github.com/1024pix/conventional-changelog-pix/pull/62) Mise à jour de la configuration de la CI
+
 # [3.1.0](https://github.com/1024pix/conventional-changelog-pix/compare/v3.0.0...v3.1.0) (2026-06-19)
 
 # [3.0.0](https://github.com/1024pix/conventional-changelog-pix/compare/v2.3.3...v3.0.0) (2025-12-31)
