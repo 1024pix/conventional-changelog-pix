@@ -1,3 +1,9 @@
+## [3.1.4](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.3...v3.1.4) (2026-10-09)
+
+### :arrow_up: Montée de version
+
+- [#75](https://github.com/1024pix/conventional-changelog-pix/pull/75) Update Node.js to ^24.21.0
+
 ## [3.1.3](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.2...v3.1.3) (2026-10-09)
 
 ### :arrow_up: Montée de version
