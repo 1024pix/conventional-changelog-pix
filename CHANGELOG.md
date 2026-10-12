@@ -1,3 +1,9 @@
+## [3.1.6](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.5...v3.1.6) (2026-10-12)
+
+### :arrow_up: Montée de version
+
+- [#80](https://github.com/1024pix/conventional-changelog-pix/pull/80) Pin dependencies (dossier racine)
+
 ## [3.1.5](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.4...v3.1.5) (2026-10-12)
 
 ### :building_construction: Tech
