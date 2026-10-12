@@ -1,3 +1,9 @@
+## [3.1.5](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.4...v3.1.5) (2026-10-12)
+
+### :building_construction: Tech
+
+- [#83](https://github.com/1024pix/conventional-changelog-pix/pull/83) Update Renovate configuration to use default config
+
 ## [3.1.4](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.3...v3.1.4) (2026-10-09)
 
 ### :arrow_up: Montée de version
