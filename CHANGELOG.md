@@ -1,3 +1,9 @@
+## [3.1.7](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.6...v3.1.7) (2026-10-13)
+
+### :arrow_up: Montée de version
+
+- [#74](https://github.com/1024pix/conventional-changelog-pix/pull/74) Update dependency conventional-changelog to v7.2.1 (dossier racine)
+
 ## [3.1.6](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.5...v3.1.6) (2026-10-12)
 
 ### :arrow_up: Montée de version
