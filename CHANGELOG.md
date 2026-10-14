@@ -1,3 +1,9 @@
+## [3.1.8](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.7...v3.1.8) (2026-10-14)
+
+### :arrow_up: Montée de version
+
+- [#85](https://github.com/1024pix/conventional-changelog-pix/pull/85) Update dependency vite to v6 (dossier racine)
+
 ## [3.1.7](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.6...v3.1.7) (2026-10-13)
 
 ### :arrow_up: Montée de version
