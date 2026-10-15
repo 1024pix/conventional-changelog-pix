@@ -1,3 +1,9 @@
+## [3.1.10](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.9...v3.1.10) (2026-10-15)
+
+### :arrow_up: Montée de version
+
+- [#78](https://github.com/1024pix/conventional-changelog-pix/pull/78) Update dependency conventional-commits-parser to v7 (dossier racine)
+
 ## [3.1.9](https://github.com/1024pix/conventional-changelog-pix/compare/v3.1.8...v3.1.9) (2026-10-14)
 
 ### :arrow_up: Montée de version
