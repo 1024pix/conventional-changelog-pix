@@ -20,7 +20,7 @@
     "url": "https://github.com/1024pix/conventional-changelog-pix/issues"
   },
   "engines": {
-    "node": "^24.21.0"
+    "node": "^24.22.1"
   },
   "homepage": "https://github.com/1024pix/conventional-changelog-pix#readme",
   "devDependencies": {
