@@ -26,7 +26,7 @@
   "devDependencies": {
     "conventional-changelog": "7.2.1",
     "conventional-commits-parser": "7.1.4",
-    "conventional-recommended-bump": "12.1.0",
+    "conventional-recommended-bump": "12.1.1",
     "tmp": "0.2.7",
     "vite": "8.3.5",
     "vitest": "2.1.9"
